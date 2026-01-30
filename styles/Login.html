@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connectez-vous à votre compte Élégance Parisienne pour accéder à votre espace personnel">
+  <title>Connexion - Élégance Parisienne</title>
+  <link rel="stylesheet" href="global.css">
+</head>
+<body>
+<!-- Header -->
+<header role="banner" aria-label="En-tête principal du site">
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120' width='200' height='120'%3E%3Crect width='200' height='120' fill='%23f5f5f5' stroke='%23333' stroke-width='2'/%3E%3Cline x1='0' y1='0' x2='200' y2='120' stroke='%23333' stroke-width='1'/%3E%3Cline x1='200' y1='0' x2='0' y2='120' stroke='%23333' stroke-width='1'/%3E%3C/svg%3E"
+             alt="Logo Élégance Parisienne - Retour à l'accueil"
+             width="200"
+             height="120">
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Contenu principal -->
+<main role="main" aria-label="Contenu principal" id="main-content">
+  <div class="login-container">
+
+    <div class="login-box" role="region" aria-labelledby="login-title">
+      <h1 id="login-title">Connexion</h1>
+
+      <!-- Règle Opquast #171 : Les champs de formulaire sont labellisés -->
+      <form method="post" action="process-login.php" aria-describedby="form-instructions" novalidate>
+
+        <p id="form-instructions" class="form-instructions">
+          Veuillez remplir tous les champs requis pour vous connecter.
+        </p>
+
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Email
+            <span class="required" aria-label="obligatoire">*</span>
+          </label>
+          <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  aria-required="true"
+                  aria-describedby="email-error"
+                  autocomplete="email"
+                  class="form-input">
+          <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">
+            Mot de passe
+            <span class="required" aria-label="obligatoire">*</span>
+          </label>
+          <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  required
+                  aria-required="true"
+                  aria-describedby="password-error password-help"
+                  autocomplete="current-password"
+                  class="form-input">
+          <!-- Règle Opquast #191 : Les formats des données attendues sont indiqués -->
+          <span id="password-help" class="help-text">
+                            Votre mot de passe doit contenir au moins 8 caractères
+                        </span>
+          <span id="password-error" class="error-message" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-actions">
+          <!-- Règle Opquast #76 : Le site propose au moins un moyen de contact -->
+          <button type="submit" class="submit-button" aria-describedby="submit-help">
+            Me connecter
+          </button>
+          <p id="submit-help" class="form-note">
+            Problème de connexion ? <a href="contact.html">Contactez-nous</a>
+          </p>
+        </div>
+
+        <div class="form-links">
+          <a href="forgot-password.html" class="link">Mot de passe oublié ?</a>
+          <a href="register.html" class="link">Créer un compte</a>
+        </div>
+
+      </form>
+
+      <!-- Message d'erreur global (si nécessaire) -->
+      <div id="global-error" class="global-error" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+        <p id="error-message"></p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer role="contentinfo" aria-label="Pied de page">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2026 Élégance Parisienne. Tous droits réservés.</p>
+      <nav aria-label="Navigation secondaire du pied de page">
+        <!-- Règle Opquast #76 : Informations de contact -->
+        <a href="mentions-legales.html">Mentions légales</a>
+        <span aria-hidden="true">•</span>
+        <!-- Règle Opquast #219 : Politique de confidentialité disponible -->
+        <a href="confidentialite.html">Politique de confidentialité</a>
+        <span aria-hidden="true">•</span>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-description">Blog de mode et lifestyle dédié à l'élégance contemporaine</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Lien d'évitement (Règle Opquast #6) -->
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<script src="form-validation.js"></script>
+</body>
+</html>
