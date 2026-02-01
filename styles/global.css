@@ -2,10 +2,12 @@
    Variables CSS pour cohérence du design
    ============================================ */
 :root {
-    /* Palette de couleurs sophistiquée */
+    /* Palette de couleurs sophistiquée avec meilleur contraste */
     --color-primary: #2c2c2c;
-    --color-secondary: #8b7355;
-    --color-accent: #d4a574;
+    --color-secondary: #1a1a1a;
+    --color-accent: #4a4a4a;
+    --color-link: #0d5c8c;
+    --color-link-hover: #094a6f;
     --color-background: #fafafa;
     --color-surface: #ffffff;
     --color-text: #333333;
@@ -88,7 +90,7 @@ body {
 
 .skip-link:focus {
     top: 0;
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid #0d5c8c;
     outline-offset: 2px;
 }
 
@@ -96,7 +98,7 @@ body {
    Focus visible pour accessibilité
    ============================================ */
 :focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid #0d5c8c;
     outline-offset: 3px;
 }
 
@@ -104,7 +106,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid var(--color-accent);
+    outline: 3px solid #0d5c8c;
     outline-offset: 2px;
 }
 
@@ -184,13 +186,13 @@ nav[role="navigation"] {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: var(--color-secondary);
-    border-bottom-color: var(--color-accent);
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
 }
 
 .nav-link[aria-current="page"] {
-    color: var(--color-secondary);
-    border-bottom-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
     font-weight: 600;
 }
 
@@ -278,7 +280,7 @@ main {
     font-family: var(--font-sans);
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--color-secondary);
+    color: var(--color-link);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -288,8 +290,9 @@ main {
 
 .read-more:hover,
 .read-more:focus {
-    color: var(--color-accent);
+    color: var(--color-link-hover);
     gap: var(--spacing-sm);
+    text-decoration: underline;
 }
 
 .article-image {
@@ -381,7 +384,7 @@ main {
 .lead-paragraph {
     font-size: 1.25rem;
     font-weight: 500;
-    color: var(--color-secondary);
+    color: var(--color-text);
     line-height: 1.7;
 }
 
@@ -446,7 +449,7 @@ td {
 
 th[scope="row"] {
     font-weight: 600;
-    color: var(--color-secondary);
+    color: var(--color-text);
     background: var(--color-background);
 }
 
@@ -481,7 +484,7 @@ th[scope="row"] {
     font-size: 0.85rem;
     padding: var(--spacing-xs) var(--spacing-sm);
     background: var(--color-background);
-    color: var(--color-secondary);
+    color: var(--color-link);
     text-decoration: none;
     border-radius: 20px;
     transition: all var(--transition-fast);
@@ -490,9 +493,9 @@ th[scope="row"] {
 
 .tag:hover,
 .tag:focus {
-    background: var(--color-secondary);
+    background: var(--color-link);
     color: white;
-    border-color: var(--color-secondary);
+    border-color: var(--color-link);
 }
 
 .article-navigation {
@@ -502,18 +505,19 @@ th[scope="row"] {
 .back-link {
     font-family: var(--font-sans);
     font-weight: 600;
-    color: var(--color-secondary);
+    color: var(--color-link);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 .back-link:hover,
 .back-link:focus {
-    color: var(--color-accent);
+    color: var(--color-link-hover);
+    text-decoration: underline;
 }
 
 /* ============================================
-   Page de connexion
+   Page de connexion et inscription
    ============================================ */
 .login-container {
     min-height: calc(100vh - 300px);
@@ -531,6 +535,10 @@ th[scope="row"] {
     border-radius: 8px;
     box-shadow: var(--shadow-lg);
     animation: scaleIn 0.6s ease;
+}
+
+.register-box {
+    max-width: 640px;
 }
 
 @keyframes scaleIn {
@@ -599,7 +607,7 @@ th[scope="row"] {
 }
 
 .form-input:focus {
-    border-color: var(--color-secondary);
+    border-color: var(--color-link);
     background: white;
 }
 
@@ -642,7 +650,7 @@ th[scope="row"] {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;
-    background: var(--color-secondary);
+    background: var(--color-primary);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -650,7 +658,7 @@ th[scope="row"] {
 }
 
 .submit-button:hover {
-    background: var(--color-accent);
+    background: #1a1a1a;
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
@@ -668,14 +676,14 @@ th[scope="row"] {
 }
 
 .form-note a {
-    color: var(--color-secondary);
+    color: var(--color-link);
     text-decoration: none;
     font-weight: 600;
 }
 
 .form-note a:hover,
 .form-note a:focus {
-    color: var(--color-accent);
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
@@ -690,14 +698,14 @@ th[scope="row"] {
 .form-links .link {
     font-family: var(--font-sans);
     font-size: 0.9rem;
-    color: var(--color-secondary);
+    color: var(--color-link);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 .form-links .link:hover,
 .form-links .link:focus {
-    color: var(--color-accent);
+    color: var(--color-link-hover);
     text-decoration: underline;
 }
 
@@ -714,6 +722,56 @@ th[scope="row"] {
     font-size: 0.95rem;
     color: var(--color-error);
     font-weight: 500;
+}
+
+/* ============================================
+   Checkboxes personnalisées
+   ============================================ */
+.checkbox-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.checkbox-input {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: var(--color-link);
+}
+
+.checkbox-input:focus-visible {
+    outline: 3px solid #0d5c8c;
+    outline-offset: 2px;
+}
+
+.checkbox-input[aria-invalid="true"] {
+    outline: 2px solid var(--color-error);
+}
+
+.checkbox-label {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.checkbox-label a {
+    color: var(--color-link);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.checkbox-label a:hover,
+.checkbox-label a:focus {
+    color: var(--color-link-hover);
 }
 
 /* ============================================
@@ -757,7 +815,7 @@ footer[role="contentinfo"] {
 
 .footer-content nav a:hover,
 .footer-content nav a:focus {
-    color: var(--color-accent);
+    color: #d0d0d0;
     text-decoration: underline;
 }
 
