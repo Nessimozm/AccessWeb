@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- Header -->
-<header role="banner" >
+<header>
   <div class="header-container">
     <div class="logo-container">
       <a href="index.html">
@@ -23,7 +23,7 @@
 </header>
 
 <!-- Contenu principal -->
-<main role="main" aria-label="Contenu principal" id="main-content">
+<main>
   <div class="login-container">
 
     <div class="login-box" role="region" aria-labelledby="login-title">
@@ -39,15 +39,12 @@
         <div class="form-group">
           <label for="email" class="form-label">
             Email
-            <span class="required" aria-label="obligatoire">*</span>
+            <span>*</span>
           </label>
           <input
                   type="email"
                   id="email"
                   name="email"
-                  required
-                  aria-required="true"
-                  aria-describedby="email-error"
                   autocomplete="email"
                   class="form-input">
           <span id="email-error" class="error-message" role="alert" aria-live="polite"></span>
@@ -100,7 +97,7 @@
 </main>
 
 <!-- Footer -->
-<footer role="contentinfo" aria-label="Pied de page">
+<footer>
   <div class="footer-container">
     <div class="footer-content">
       <p>&copy; 2026 Élégance Parisienne. Tous droits réservés.</p>
