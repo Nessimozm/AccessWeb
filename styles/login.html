@@ -9,7 +9,7 @@
 </head>
 <body>
 <!-- Header -->
-<header role="banner" aria-label="En-tête principal du site">
+<header role="banner" >
   <div class="header-container">
     <div class="logo-container">
       <a href="index.html">
@@ -56,14 +56,13 @@
         <div class="form-group">
           <label for="password" class="form-label">
             Mot de passe
-            <span class="required" aria-label="obligatoire">*</span>
+            <span class="required">*</span>
           </label>
           <input
                   type="password"
                   id="password"
                   name="password"
                   required
-                  aria-required="true"
                   aria-describedby="password-error password-help"
                   autocomplete="current-password"
                   class="form-input">
@@ -71,7 +70,7 @@
           <span id="password-help" class="help-text">
                             Votre mot de passe doit contenir au moins 8 caractères
                         </span>
-          <span id="password-error" class="error-message" role="alert" aria-live="polite"></span>
+          <span id="password-error" class="error-message" role="alert"></span>
         </div>
 
         <div class="form-actions">
@@ -92,7 +91,7 @@
       </form>
 
       <!-- Message d'erreur global (si nécessaire) -->
-      <div id="global-error" class="global-error" role="alert" aria-live="assertive" aria-atomic="true" hidden>
+      <div id="global-error" class="global-error" role="alert" aria-live="assertive" hidden>
         <p id="error-message"></p>
       </div>
     </div>
@@ -105,7 +104,7 @@
   <div class="footer-container">
     <div class="footer-content">
       <p>&copy; 2026 Élégance Parisienne. Tous droits réservés.</p>
-      <nav aria-label="Navigation secondaire du pied de page">
+      <nav>
         <!-- Règle Opquast #76 : Informations de contact -->
         <a href="mentions-legales.html">Mentions légales</a>
         <span aria-hidden="true">•</span>
